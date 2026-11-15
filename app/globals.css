@@ -779,3 +779,14 @@ input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus
 .mnav-link{font-size:.98rem;padding:9px 8px;gap:10px}
 .mnav-ic{width:34px;height:34px;border-radius:10px}
 .mnav-sub ul{margin-left:24px}
+
+/* side menu: solid white panel, light shade behind */
+.mnav-panel{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;border-right:0}
+.mnav-back{background:rgba(11,30,58,.16);backdrop-filter:none}
+.mnav-ic,.mnav-x{background:#fff}
+/* hero single CTA */
+.btn-hero{font-size:1rem;padding:.95em 1.7em;box-shadow:0 16px 34px -16px rgba(21,132,247,.7)}
+.btn-hero span{transition:transform .2s}
+.btn-hero:hover span{transform:translateX(4px)}
+@media (max-width:420px){.btn-hero{width:100%;justify-content:center}}
+@media (max-width:420px){.btn-hero{font-size:.9rem;padding:.95em 1.1em;white-space:nowrap;gap:.4em}}

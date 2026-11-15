@@ -130,8 +130,8 @@ export default function Hero() {
       <h1>Processes that <b>run themselves</b>, so your team can run the business.</h1>
       <p className="lede">e-Xpert redesigns how work moves through your company. We remove manual steps, connect the systems you already use, and automate the routine, so growth doesn't depend on adding headcount.</p>
       <div className="actions">
-        <a className="btn btn-primary" href="#services">Explore services</a>
-        <a className="btn btn-ghost btn-free" href="/free-consultation/">Get a free consultation</a>
+        
+        <a className="btn btn-primary btn-hero" href="/free-consultation/">Identify your business problem for free <span aria-hidden="true">→</span></a>
       </div>
     </div>
     <div className="flow" id="flow" aria-label="Animated example: an escrow payment moving from request to release">
