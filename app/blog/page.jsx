@@ -25,19 +25,26 @@ export default function BlogPage() {
           <div className="wrap">
             {featured && (
               <a className="post-card post-featured" href={`/blog/${featured.slug}/`}>
+                {featured.cover && <img className="post-thumb" src={featured.cover} alt="" width="216" height="384" />}
+                <div className="post-body">
                 <div className="post-meta"><span className="p-tag">{featured.category}</span><span>{formatDate(featured.date)} · {featured.minutes} min read</span></div>
                 <h2>{featured.title}</h2>
                 <p>{featured.excerpt}</p>
                 <span className="post-more">Read article →</span>
+
+                </div>
               </a>
             )}
             <div className="post-grid">
               {rest.map((p) => (
                 <a className="post-card" key={p.slug} href={`/blog/${p.slug}/`}>
+                  {p.cover && <img className="post-thumb" src={p.cover} alt="" loading="lazy" width="108" height="192" />}
+                  <div className="post-body">
                   <div className="post-meta"><span className="p-tag">{p.category}</span><span>{p.minutes} min read</span></div>
                   <h3>{p.title}</h3>
                   <p>{p.excerpt}</p>
                   <span className="post-date">{formatDate(p.date)}</span>
+                  </div>
                 </a>
               ))}
             </div>

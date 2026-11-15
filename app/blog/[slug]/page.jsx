@@ -13,7 +13,7 @@ export function generateMetadata({ params }) {
   return {
     title: `${post.title} | e-Xpert Blog`,
     description: post.excerpt,
-    openGraph: { type: 'article', title: post.title, description: post.excerpt, images: ['/og-image.png'] },
+    openGraph: { type: 'article', title: post.title, description: post.excerpt, images: [post.cover || '/og-image.png'] },
   };
 }
 
@@ -28,9 +28,15 @@ export default function PostPage({ params }) {
         <article className="block article">
           <div className="wrap article-wrap">
             <a className="back" href="/blog/">← All articles</a>
-            <div className="post-meta"><span className="p-tag">{post.category}</span><span>{formatDate(post.date)} · {post.minutes} min read</span></div>
-            <h1 className="article-title">{post.title}</h1>
-            <p className="article-by">By {post.author}</p>
+            <header className="article-head">
+              <div className="article-head-text">
+                <div className="post-meta"><span className="p-tag">{post.category}</span><span>{formatDate(post.date)} · {post.minutes} min read</span></div>
+                <h1 className="article-title">{post.title}</h1>
+                <p className="article-lede">{post.excerpt}</p>
+                <p className="article-by">By {post.author}</p>
+              </div>
+              {post.cover && <img className="article-cover" src={post.cover} alt={post.title} width="1080" height="1920" />}
+            </header>
             <div className="prose" dangerouslySetInnerHTML={{ __html: post.html }} />
             <div className="article-cta">
               <div>
@@ -48,10 +54,14 @@ export default function PostPage({ params }) {
               <div className="post-grid" style={{ marginTop: 20 }}>
                 {more.map((p) => (
                   <a className="post-card" key={p.slug} href={`/blog/${p.slug}/`}>
+                    {p.cover && <img className="post-thumb" src={p.cover} alt="" loading="lazy" width="108" height="192" />}
+                    <div className="post-body">
                     <div className="post-meta"><span className="p-tag">{p.category}</span><span>{p.minutes} min read</span></div>
                     <h3>{p.title}</h3>
                     <p>{p.excerpt}</p>
                     <span className="post-date">{formatDate(p.date)}</span>
+
+                    </div>
                   </a>
                 ))}
               </div>
