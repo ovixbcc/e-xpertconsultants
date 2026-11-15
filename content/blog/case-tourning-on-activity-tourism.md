@@ -1,7 +1,8 @@
 ---
 title: "Case study: Tourning On and the hard lessons of activity tourism"
 excerpt: "An activity-based tourism platform went from idea to reality in six months and drew strong traction from tourists. Then local realities forced it to close in Cox's Bazar. Here is what we learned."
-date: 2026-11-14
+date: 2026-11-17
+draft: true
 category: "Case study · Tourism"
 author: "Sabuj Mandal Ovi"
 ---

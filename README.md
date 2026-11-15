@@ -46,6 +46,8 @@ author: "e-Xpert Team"
 Your article text here. Use ## for section headings and - for bullet lists.
 ```
 
+To prepare an article without showing it yet, add `draft: true` under the date. Remove that line (or set it to `false`) to publish it.
+
 3. Commit the file to GitHub. If the site is on Vercel it updates automatically; otherwise run `npm run build` and upload `out/` again.
 
 The newest three articles also appear on the homepage, in the "From the blog" section.

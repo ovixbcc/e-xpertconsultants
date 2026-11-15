@@ -1,7 +1,8 @@
 ---
 title: "Case study: Mouchak and why private tutors resist going digital"
 excerpt: "Popular teachers run businesses worth millions of taka a month, almost all in cash. A smart learning platform has to solve their real fears first: privacy, data and control."
-date: 2026-11-13
+date: 2026-11-18
+draft: true
 category: "Case study · EdTech"
 author: "Sabuj Mandal Ovi"
 ---

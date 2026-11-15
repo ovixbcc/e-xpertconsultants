@@ -1,7 +1,8 @@
 ---
 title: "Case study: Enabling foreign card payments without inviting fraud"
 excerpt: "Freelancers and exporters need to accept international cards. Fraudsters with fake merchant documents put the whole gateway industry at risk. Here is how to serve one and stop the other."
-date: 2026-11-11
+date: 2026-11-19
+draft: true
 category: "Case study · FinTech"
 author: "Sabuj Mandal Ovi"
 ---
