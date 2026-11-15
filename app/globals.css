@@ -217,18 +217,18 @@ footer{border-top:1px solid var(--line);padding-block:48px 36px}
 .inf{width:100%;max-width:100%;height:auto;display:block;overflow:visible}
 .ig1{stop-color:var(--blue-deep)}.ig2{stop-color:var(--sky)}
 .ih1{stop-color:var(--ice);stop-opacity:.9}.ih2{stop-color:var(--ice);stop-opacity:0}
-.inf-track{fill:none;stroke:var(--ice);stroke-width:30;stroke-linecap:round;stroke-linejoin:round}
-.inf-rail{fill:none;stroke:var(--bg);stroke-width:2;stroke-dasharray:1 12;stroke-linecap:round;opacity:.9}
+.inf-track{fill:none;stroke:color-mix(in srgb,var(--blue) 22%,var(--bg));stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.inf-rail{fill:none;stroke:var(--sky);stroke-width:1;stroke-dasharray:1 9;stroke-linecap:round;opacity:.7}
 .inf-t{fill:none;stroke-linecap:round;stroke-linejoin:round}
-.inf-t3{stroke:var(--blue);stroke-width:30;opacity:.12}
-.inf-t2{stroke:var(--blue);stroke-width:30;opacity:.3}
-.inf-glow{stroke:var(--sky);stroke-width:30;opacity:.55}
-.inf-t1{stroke:url(#inf-grad);stroke-width:30}
+.inf-t3{stroke:var(--sky);stroke-width:1.5;opacity:.35}
+.inf-t2{stroke:var(--blue);stroke-width:2;opacity:.55}
+.inf-glow{stroke:var(--sky);stroke-width:7;opacity:.6}
+.inf-t1{stroke:url(#inf-grad);stroke-width:2.6}
 .inf-eye{fill:var(--blue)}
 .inf-eye-ring{fill:none;stroke:var(--blue);stroke-width:2}
-.inf-run{fill:var(--bg);stroke:var(--blue-deep);stroke-width:3.5}
-.inf-run-halo{fill:var(--bg);opacity:.35}
-.spk{fill:var(--sky)}
+.inf-run{fill:#fff;stroke:var(--blue);stroke-width:1.6}
+.inf-run-halo{fill:var(--sky);opacity:.35}
+.spk{fill:var(--blue)}
 .mk .disc{fill:var(--bg);stroke:var(--line);stroke-width:2;transition:fill .35s,stroke .35s}
 .mk .ic{fill:none;stroke:var(--ink-soft);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;transition:stroke .35s}
 .mk .rip{fill:none;stroke:var(--blue);stroke-width:2;opacity:0}
@@ -244,7 +244,7 @@ footer{border-top:1px solid var(--line);padding-block:48px 36px}
 @keyframes rip{0%{opacity:.8;r:26}100%{opacity:0;r:52}}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:no-preference){.inf-eye-ring{animation:eye 2.4s ease-out infinite}}
-@keyframes eye{0%{opacity:.8;r:14}100%{opacity:0;r:30}}
+@keyframes eye{0%{opacity:.8;r:6}100%{opacity:0;r:18}}
 .stages{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 .stages li{position:relative;overflow:hidden;display:grid;grid-template-columns:44px 1fr;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid transparent;transition:background .35s,border-color .35s,transform .35s,box-shadow .35s}
 .stages li>div{min-width:0}
@@ -655,3 +655,20 @@ button.btn{font-family:var(--display)}
 .blog-select svg{position:absolute;right:14px;top:50%;width:18px;height:18px;margin-top:-9px;fill:none;stroke:var(--blue);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
 .blog-bar-count{font-size:.86rem;color:var(--ink-soft);margin-left:auto}
 @media (max-width:520px){.blog-select{flex:1 1 100%}.blog-bar-count{margin-left:0}}
+
+.inf-bg{opacity:.6}
+.mk .disc{stroke-width:1.5}
+/* free consultation */
+.btn-free{border-color:var(--blue);color:var(--blue-deep)}
+.btn-free:hover{background:var(--ice)}
+.consult-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(28px,5vw,64px);align-items:start}
+.consult-grid>*{min-width:0}
+.consult-points{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px}
+.consult-points li{display:flex;gap:14px;align-items:flex-start}
+.consult-points b{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:var(--on-blue);font-family:var(--display);font-weight:500;font-size:.85rem}
+.consult-points span{display:grid;gap:2px;color:var(--ink-soft);font-size:.95rem}
+.consult-points strong{font-family:var(--display);font-weight:400;color:var(--ink);font-size:1.05rem}
+.consult-contact{margin-top:26px;padding-top:20px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:.92rem}
+.consult-contact strong{font-weight:500;color:var(--ink);word-break:break-word}
+.consult-form{box-shadow:0 30px 70px -40px rgba(21,132,247,.45)}
+@media (max-width:900px){.consult-grid{grid-template-columns:1fr}}

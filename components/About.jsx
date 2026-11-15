@@ -12,7 +12,7 @@ export default function About() {
   if(!path||!path.getTotalLength)return;
   var L=path.getTotalLength();
   var runner=document.getElementById('inf-runner'),g=document.getElementById('inf-marks'),sg=document.getElementById('inf-sparks');
-  var trails=[['.inf-t1',90],['.inf-glow',90],['.inf-t2',190],['.inf-t3',320]].map(function(t){var e=document.querySelector(t[0]);e.style.strokeDasharray=t[1]+' '+(L*2);return {e:e,len:t[1]}});
+  var trails=[['.inf-t1',46],['.inf-glow',46],['.inf-t2',110],['.inf-t3',190]].map(function(t){var e=document.querySelector(t[0]);e.style.strokeDasharray=t[1]+' '+(L*2);return {e:e,len:t[1]}});
   var items=document.querySelectorAll('#stages li');
   items.forEach(function(li){if(!li.querySelector('.prog')){var p=document.createElement('span');p.className='prog';li.appendChild(p)}});
   var icons={
@@ -32,9 +32,9 @@ export default function About() {
     g.appendChild(m);return {s:s,el:m};
   });
   // spark pool
-  var sparks=[];for(var i=0;i<22;i++){var c=document.createElementNS(NS,'circle');c.setAttribute('class','spk');c.setAttribute('r','0');sg.appendChild(c);sparks.push({el:c,life:0})}
+  var sparks=[];for(var i=0;i<60;i++){var c=document.createElementNS(NS,'circle');c.setAttribute('class','spk');c.setAttribute('r','0');sg.appendChild(c);sparks.push({el:c,life:0})}
   var si=0;
-  function emit(x,y,n){for(var k=0;k<n;k++){var s=sparks[si++%sparks.length];var a=Math.random()*Math.PI*2,v=0.6+Math.random()*1.6;s.x=x;s.y=y;s.vx=Math.cos(a)*v;s.vy=Math.sin(a)*v;s.life=1;s.r=1.5+Math.random()*2.5}}
+  function emit(x,y,n){for(var k=0;k<n;k++){var s=sparks[si++%sparks.length];var a=Math.random()*Math.PI*2,v=0.6+Math.random()*1.6;s.x=x;s.y=y;s.vx=Math.cos(a)*v;s.vy=Math.sin(a)*v;s.life=1;s.r=.6+Math.random()*1.6}}
   function stepSparks(dt){sparks.forEach(function(s){if(s.life<=0)return;s.life-=dt/700;s.x+=s.vx*dt/16;s.y+=s.vy*dt/16;s.el.setAttribute('cx',s.x.toFixed(1));s.el.setAttribute('cy',s.y.toFixed(1));s.el.setAttribute('r',Math.max(0,s.r*s.life).toFixed(2));s.el.style.opacity=Math.max(0,s.life)})}
   var active=-1;
   function activate(a,dur){
@@ -43,7 +43,7 @@ export default function About() {
     void marks[a].el.getBoundingClientRect();marks[a].el.classList.add('hit');
     items.forEach(function(li,i){li.classList.toggle('on',i===a);var p=li.querySelector('.prog');p.style.transition='none';p.style.width='0';
       if(i===a&&dur){void p.offsetWidth;p.style.transition='width '+dur+'ms linear';p.style.width='100%'}});
-    var q=path.getPointAtLength(marks[a].s);emit(q.x,q.y,14);
+    var q=path.getPointAtLength(marks[a].s);emit(q.x,q.y,10);
   }
   function place(pos){
     var q=path.getPointAtLength(pos);runner.setAttribute('transform','translate('+q.x.toFixed(1)+' '+q.y.toFixed(1)+')');
@@ -53,7 +53,7 @@ export default function About() {
   var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduce){place(marks[0].s+40);activate(0,0);return}
   // move with a soft pause at each stage
-  var SPEED=L/11000,PAUSE=900;
+  var SPEED=L/5200,PAUSE=450;
   var seq=marks.map(function(m,i){var next=i<3?marks[i+1].s:marks[0].s+L;return {from:m.s,to:next,i:i}});
   var cycle=seq.reduce(function(a,s){return a+PAUSE+(s.to-s.from)/SPEED},0);
   var t0=null,last=null,frameN=0;
@@ -67,7 +67,7 @@ export default function About() {
         activate(s.i,span);
         var pos=lt<PAUSE?s.from:s.from+(s.to-s.from)*ease((lt-PAUSE)/mv);
         var q=place(pos%L);
-        if(lt>=PAUSE&&(frameN++%3===0))emit(q.x,q.y,1);
+        if(lt>=PAUSE)emit(q.x,q.y,1);
         break}
       acc+=span}
     stepSparks(dt);
@@ -109,11 +109,11 @@ export default function About() {
           <path className="inf-t inf-glow" filter="url(#inf-glow)" d="M280 165 C 220 67, 82 67, 66 165 C 82 263, 220 263, 280 165 C 340 67, 478 67, 494 165 C 478 263, 340 263, 280 165 Z" />
           <path className="inf-t inf-t1" d="M280 165 C 220 67, 82 67, 66 165 C 82 263, 220 263, 280 165 C 340 67, 478 67, 494 165 C 478 263, 340 263, 280 165 Z" />
           <path id="inf-path" d="M280 165 C 220 67, 82 67, 66 165 C 82 263, 220 263, 280 165 C 340 67, 478 67, 494 165 C 478 263, 340 263, 280 165 Z" fill="none" stroke="none" />
-          <circle className="inf-eye" cx={122} cy={165} r={14} />
-          <circle className="inf-eye-ring" cx={122} cy={165} r={14} />
+          <circle className="inf-eye" cx={122} cy={165} r={6} />
+          <circle className="inf-eye-ring" cx={122} cy={165} r={6} />
           <g id="inf-sparks" />
           <g id="inf-marks" />
-          <g id="inf-runner"><circle className="inf-run-halo" r={20} /><circle className="inf-run" r={9} /></g>
+          <g id="inf-runner"><circle className="inf-run-halo" r={9} /><circle className="inf-run" r={3.5} /></g>
         </svg>
       </div>
       <ol className="stages" id="stages">

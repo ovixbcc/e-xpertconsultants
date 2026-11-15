@@ -131,7 +131,7 @@ export default function Hero() {
       <p className="lede">e-Xpert redesigns how work moves through your company. We remove manual steps, connect the systems you already use, and automate the routine, so growth doesn't depend on adding headcount.</p>
       <div className="actions">
         <a className="btn btn-primary" href="#services">Explore services</a>
-        <a className="btn btn-ghost" href="#about">Our story</a>
+        <a className="btn btn-ghost btn-free" href="/free-consultation/">Get a free consultation</a>
       </div>
     </div>
     <div className="flow" id="flow" aria-label="Animated example: an escrow payment moving from request to release">
