@@ -1,10 +1,12 @@
 import Logo from './Logo';
+import MobileNav from './MobileNav';
 
 export default function Header() {
   return (
     <>
 <header className="site">
   <div className="wrap nav">
+    <MobileNav />
     <a className="logo" href="/" aria-label="e-Xpert home"><Logo /></a>
     <ul>
       <li><a href="/#about">Who we are</a></li>
