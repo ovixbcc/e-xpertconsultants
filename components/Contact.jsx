@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 export default function Contact() {
   useEffect(() => {
     let alive = true, rafId = 0;
+    try { const tp = new URLSearchParams(window.location.search).get('topic'); const sel = document.getElementById('f-topic'); if (tp && sel) { sel.value = tp; } } catch (e) {}
     const __raf = (fn) => { if (alive) rafId = requestAnimationFrame((t) => { if (alive) fn(t); }); };
     
 document.querySelectorAll('.copy').forEach(function(b){

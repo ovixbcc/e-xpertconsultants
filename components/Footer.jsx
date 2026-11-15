@@ -14,10 +14,10 @@ export default function Footer() {
         <h4>Company</h4>
         <ul>
           <li><a href="/#about">Who we are</a></li>
-          <li><a href="/#expertise">Major fields</a></li>
+          <li><a href="/#expertise">Industries</a></li>
           <li><a href="/#services">Services</a></li>
-          <li><a href="/#products">Products</a></li>
-          <li><a href="/#leadership">Leadership</a></li>
+          <li><a href="/products/">Products</a></li>
+          <li><a href="/team/">Team</a></li>
           <li><a href="/blog/">Blog</a></li>
         </ul>
       </div>
