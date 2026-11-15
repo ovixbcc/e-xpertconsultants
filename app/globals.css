@@ -775,3 +775,7 @@ input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus
 .prod-chip{padding:14px 20px}
 @media (max-width:420px){.plk-big .plk-word{font-size:1.8rem}.plk-word{font-size:1.4rem}}
 .prod-chip{width:min(290px,86%);justify-content:center}
+.mnav-panel{width:min(280px,72vw)}
+.mnav-link{font-size:.98rem;padding:9px 8px;gap:10px}
+.mnav-ic{width:34px;height:34px;border-radius:10px}
+.mnav-sub ul{margin-left:24px}
