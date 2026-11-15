@@ -1,15 +1,15 @@
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import BlogList from '../../components/BlogList';
 import { getAllPosts, formatDate } from '../../lib/posts';
 
 export const metadata = {
   title: 'Blog | e-Xpert Consultants',
-  description: 'Practical articles on process automation, growth, payments and technology for businesses in Bangladesh.',
+  description: 'Practical articles and case studies on process automation, growth, payments and technology for businesses in Bangladesh.',
 };
 
 export default function BlogPage() {
-  const posts = getAllPosts();
-  const [featured, ...rest] = posts;
+  const posts = getAllPosts().map(({ content, ...p }) => ({ ...p, dateLabel: formatDate(p.date) }));
   return (
     <>
       <Header />
@@ -18,36 +18,12 @@ export default function BlogPage() {
           <div className="wrap">
             <p className="eyebrow">Blog</p>
             <h1 className="blog-title">Ideas for running a business that grows.</h1>
-            <p className="lede">Practical articles on automation, operations, payments and growth, written by the e-Xpert team.</p>
+            <p className="lede">Practical articles and real business case studies on automation, operations, payments and growth, written by the e-Xpert team.</p>
           </div>
         </section>
         <section className="block blog-list-wrap">
           <div className="wrap">
-            {featured && (
-              <a className="post-card post-featured" href={`/blog/${featured.slug}/`}>
-                {featured.cover && <img className="post-thumb" src={featured.cover} alt="" width="216" height="384" />}
-                <div className="post-body">
-                <div className="post-meta"><span className="p-tag">{featured.category}</span><span>{formatDate(featured.date)} · {featured.minutes} min read</span></div>
-                <h2>{featured.title}</h2>
-                <p>{featured.excerpt}</p>
-                <span className="post-more">Read article →</span>
-
-                </div>
-              </a>
-            )}
-            <div className="post-grid">
-              {rest.map((p) => (
-                <a className="post-card" key={p.slug} href={`/blog/${p.slug}/`}>
-                  {p.cover && <img className="post-thumb" src={p.cover} alt="" loading="lazy" width="108" height="192" />}
-                  <div className="post-body">
-                  <div className="post-meta"><span className="p-tag">{p.category}</span><span>{p.minutes} min read</span></div>
-                  <h3>{p.title}</h3>
-                  <p>{p.excerpt}</p>
-                  <span className="post-date">{formatDate(p.date)}</span>
-                  </div>
-                </a>
-              ))}
-            </div>
+            <BlogList posts={posts} />
           </div>
         </section>
       </main>

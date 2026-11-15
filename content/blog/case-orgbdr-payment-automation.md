@@ -1,8 +1,7 @@
 ---
 title: "Case study: Automating birth and death registration fees"
 excerpt: "More than 80,000 registration tickets a day, an estimated BDT 24 crore a month, collected mostly in cash. The case for digital fee collection at Union Parishad level."
-date: 2026-11-20
-draft: true
+date: 2026-11-12
 category: "Case study · GovTech"
 author: "Sabuj Mandal Ovi"
 ---

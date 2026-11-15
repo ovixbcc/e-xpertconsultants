@@ -1,8 +1,7 @@
 ---
 title: "Case study: How online gambling exploits payment systems, and how to stop it"
 excerpt: "Online gambling has grown fast, targeting young people through social media ads and moving money through fake accounts. Payment companies, banks and platforms can do much more to stop it."
-date: 2026-11-21
-draft: true
+date: 2026-11-09
 category: "Case study · Risk & Compliance"
 author: "Sabuj Mandal Ovi"
 ---

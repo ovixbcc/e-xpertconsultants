@@ -72,7 +72,6 @@ export default function MobileNav() {
                   <button type="button" className="mnav-link" onClick={() => toggle(l.group)} aria-expanded={group === l.group}>
                     <span className="mnav-ic"><Icon name={l.icon} /></span>
                     <span className="mnav-name">{l.name}</span>
-                    <span className="mnav-count">{l.items.length - (l.group === 'products' ? 1 : 0)}</span>
                     <svg className="mnav-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 10l4 4 4-4" /></svg>
                   </button>
                   <div className="mnav-sub">

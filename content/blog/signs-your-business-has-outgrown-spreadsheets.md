@@ -1,8 +1,7 @@
 ---
 title: "Five signs your business has outgrown spreadsheets"
 excerpt: "Spreadsheets are a great place to start. These warning signs tell you it is time for a proper system."
-date: 2026-11-18
-draft: true
+date: 2026-11-05
 category: "Operations"
 author: "e-Xpert Team"
 ---

@@ -1,8 +1,7 @@
 ---
 title: "How escrow makes online deals safer in Bangladesh"
 excerpt: "Buyers worry about paying first. Sellers worry about delivering first. Escrow removes that standoff. Here is how it works."
-date: 2026-11-16
-draft: true
+date: 2026-11-10
 category: "FinTech"
 author: "e-Xpert Team"
 ---
