@@ -27,10 +27,34 @@ The site is exported as plain static files to the `out/` folder (`output: 'expor
 - **Netlify:** build command `npm run build`, publish directory `out`.
 - **Hostinger or any web host:** run `npm run build` and upload the contents of `out/` to `public_html`.
 
+## Writing a blog post
+
+Blog articles live in `content/blog/` as Markdown files. To publish a new one:
+
+1. Create a file such as `content/blog/my-new-article.md`. The file name becomes the web address: `/blog/my-new-article/`.
+2. Start it with this header, then write the article in Markdown below it:
+
+```markdown
+---
+title: "Your article title"
+excerpt: "One or two sentences shown on the blog list."
+date: 2026-12-01
+category: "Automation"
+author: "e-Xpert Team"
+---
+
+Your article text here. Use ## for section headings and - for bullet lists.
+```
+
+3. Commit the file to GitHub. If the site is on Vercel it updates automatically; otherwise run `npm run build` and upload `out/` again.
+
+The newest three articles also appear on the homepage, in the "From the blog" section.
+
 ## Project structure
 
 ```
 app/
+  blog/             Blog list page and article pages
   layout.jsx        Page metadata, favicons, fonts
   page.jsx          Puts the sections together
   globals.css       All styles and brand colours (see :root tokens)
@@ -44,9 +68,12 @@ components/
   Services.jsx      Growth chart and the six service cards
   Products.jsx      TrustBee, Chaatro.com and DoctorsBook
   Leadership.jsx    Leadership team
+  LatestPosts.jsx   "From the blog" strip on the homepage
   Contact.jsx       Contact details and enquiry form
   Footer.jsx        Footer
   Logo.jsx          e-Xpert logo (SVG)
+content/blog/      Blog articles (Markdown)
+lib/posts.js       Reads the blog articles
 public/
   images/           Product logos and team photos
   favicon.ico, og-image.png, ...

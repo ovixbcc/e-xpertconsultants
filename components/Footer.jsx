@@ -7,17 +7,18 @@ export default function Footer() {
   <div className="wrap">
     <div className="foot">
       <div>
-        <a className="logo" href="#top" aria-label="e-Xpert home"><Logo /></a>
+        <a className="logo" href="/" aria-label="e-Xpert home"><Logo /></a>
         <p>Business and process automation for companies that want to grow without adding complexity.</p>
       </div>
       <div>
         <h4>Company</h4>
         <ul>
-          <li><a href="#about">Who we are</a></li>
-          <li><a href="#expertise">Major fields</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#leadership">Leadership</a></li>
+          <li><a href="/#about">Who we are</a></li>
+          <li><a href="/#expertise">Major fields</a></li>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#products">Products</a></li>
+          <li><a href="/#leadership">Leadership</a></li>
+          <li><a href="/blog/">Blog</a></li>
         </ul>
       </div>
       <div>
