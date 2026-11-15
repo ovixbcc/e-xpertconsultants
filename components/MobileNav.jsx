@@ -4,16 +4,8 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import Logo from './Logo';
 import { PRODUCTS } from '../lib/products';
+import { SERVICES } from '../lib/services';
 
-const SERVICES = [
-  'Market Research and Business Analysis',
-  'Marketing, Sales and Growth',
-  'Technical Product Development',
-  'Project Management',
-  'Branding and PR',
-  'Automation and Excellence',
-];
-const INDUSTRIES = ['TravelTech', 'FinTech', 'Agro', 'E-commerce', 'Medical', 'Real Estate', 'BPC', 'RMG'];
 
 const I = {
   home: <path d="M4 11l8-6 8 6v8a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1z" />,
@@ -48,8 +40,7 @@ export default function MobileNav() {
   const links = [
     { name: 'Home', icon: 'home', href: '/' },
     { name: 'Who we are', icon: 'about', href: '/#about' },
-    { name: 'Services', icon: 'services', group: 'services', items: SERVICES.map((s) => ({ name: s, href: '/#services' })) },
-    { name: 'Industries', icon: 'industries', group: 'industries', items: INDUSTRIES.map((s) => ({ name: s, href: '/#expertise' })) },
+    { name: 'Services', icon: 'services', group: 'services', items: SERVICES.map((s) => ({ name: s.name, href: `/services/${s.slug}/` })) },
     { name: 'Products', icon: 'products', group: 'products', items: [{ name: 'All products', href: '/products/' }, ...PRODUCTS.map((p) => ({ name: p.name, href: `/products/${p.slug}/` }))] },
     { name: 'Team', icon: 'team', href: '/team/' },
     { name: 'Blog', icon: 'blog', href: '/blog/' },

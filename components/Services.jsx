@@ -148,9 +148,10 @@ export default function Services() {
             <g className="lg"><rect x={140} y={106} width={10} height={10} rx={3} fill="#CFE4FD" /><text x={158} y={115}>Others</text></g>
           </svg>
         </div>
-        <h3>Market Research and Business Analysis</h3>
+        <h3><a className="svc-link" href="/services/market-research-business-analysis/">Market Research and Business Analysis</a></h3>
         <p>Market sizing, competitor and customer research, and a clear read on your business model, costs and processes before any big decision.</p>
         <div className="tags"><span className="tag">Market sizing</span><span className="tag">Competitor analysis</span><span className="tag">Feasibility</span></div>
+          <span className="svc-more">Learn more →</span>
       </article>
       <article className="svc" style={{'--c': 'var(--c2)'}}>
         <div className="svc-viz">
@@ -163,9 +164,10 @@ export default function Services() {
             <path className="up" d="M226 122 L262 86 M248 86 h14 v14" style={{'--dl': '1s'}} />
           </svg>
         </div>
-        <h3>Marketing, Sales and Growth</h3>
+        <h3><a className="svc-link" href="/services/marketing-sales-growth/">Marketing, Sales and Growth</a></h3>
         <p>Go-to-market plans, digital campaigns, sales pipelines and CRM, measured against targets every month.</p>
         <div className="tags"><span className="tag">Go-to-market</span><span className="tag">Digital marketing</span><span className="tag">Sales pipeline</span></div>
+          <span className="svc-more">Learn more →</span>
       </article>
       <article className="svc" style={{'--c': 'var(--c3)'}}>
         <div className="svc-viz">
@@ -177,9 +179,10 @@ export default function Services() {
             <text className="vl" x={0} y={125}>Launch</text><rect className="trk2" x={70} y={115} width={176} height={12} rx={6} /><rect className="sbar" x={70} y={115} width={176} height={12} rx={6} fill="#BFCFF6" style={{'--dl': '1.8s'}} /><circle className="tick" cx={264} cy={121} r={8} style={{'--dl': '2.7s'}} />
           </svg>
         </div>
-        <h3>Technical Product Development</h3>
+        <h3><a className="svc-link" href="/services/technical-product-development/">Technical Product Development</a></h3>
         <p>Websites, mobile apps, booking engines and internal tools, designed, built and maintained by our product team.</p>
         <div className="tags"><span className="tag">Web &amp; mobile apps</span><span className="tag">Integrations</span><span className="tag">MVPs</span></div>
+          <span className="svc-more">Learn more →</span>
       </article>
       <article className="svc" style={{'--c': 'var(--c4)'}}>
         <div className="svc-viz">
@@ -194,9 +197,10 @@ export default function Services() {
             <g className="today"><rect x={63} y={36} width={2} height={100} rx={1} /><circle cx={64} cy={36} r={4} /></g>
           </svg>
         </div>
-        <h3>Project Management</h3>
+        <h3><a className="svc-link" href="/services/project-management/">Project Management</a></h3>
         <p>A dedicated lead who plans, tracks and reports on delivery, keeping scope, budget and timelines under control.</p>
         <div className="tags"><span className="tag">Planning</span><span className="tag">Progress reports</span><span className="tag">Agile delivery</span></div>
+          <span className="svc-more">Learn more →</span>
       </article>
       <article className="svc" style={{'--c': 'var(--c5)'}}>
         <div className="svc-viz">
@@ -211,9 +215,10 @@ export default function Services() {
             <g className="q"><text x={52} y={137}>Q1</text><text x={112} y={137}>Q2</text><text x={172} y={137}>Q3</text><text x={232} y={137}>Q4</text></g>
           </svg>
         </div>
-        <h3>Branding and PR</h3>
+        <h3><a className="svc-link" href="/services/branding-pr/">Branding and PR</a></h3>
         <p>Brand identity, messaging, launch campaigns and media relations that make your business recognised and trusted.</p>
         <div className="tags"><span className="tag">Identity</span><span className="tag">Content</span><span className="tag">Media relations</span></div>
+          <span className="svc-more">Learn more →</span>
       </article>
       <article className="svc" style={{'--c': 'var(--c6)'}}>
         <div className="svc-viz">
@@ -230,9 +235,10 @@ export default function Services() {
             <rect className="trk2" x={176} y={106} width={98} height={10} rx={5} /><rect className="sbar" x={176} y={106} width={86} height={10} rx={5} fill="#2E9BFF" style={{'--dl': '.3s'}} />
           </svg>
         </div>
-        <h3>Automation and Excellence</h3>
+        <h3><a className="svc-link" href="/services/automation-excellence/">Automation and Excellence</a></h3>
         <p>Workflow automation, ERP and CRM integration, dashboards and continuous improvement, so operations run smoothly at scale.</p>
         <div className="tags"><span className="tag">Workflow automation</span><span className="tag">ERP &amp; CRM</span><span className="tag">Dashboards</span></div>
+          <span className="svc-more">Learn more →</span>
       </article>
     </div>
     <p className="svc-note">Charts show illustrative examples, not client data.</p>
