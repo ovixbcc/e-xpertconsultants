@@ -790,3 +790,24 @@ input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus
 .btn-hero:hover span{transform:translateX(4px)}
 @media (max-width:420px){.btn-hero{width:100%;justify-content:center}}
 @media (max-width:420px){.btn-hero{font-size:.9rem;padding:.95em 1.1em;white-space:nowrap;gap:.4em}}
+/* side menu: blue panel, inverted colours */
+.mnav-panel{background:linear-gradient(165deg,#0B4A93 0%,#0E6AD6 55%,#1584F7 100%);color:#fff;box-shadow:24px 0 60px -30px rgba(11,30,58,.7)}
+.mnav-panel::before{background:linear-gradient(90deg,rgba(255,255,255,.15),rgba(124,196,255,.9),rgba(255,255,255,.15))}
+.mnav-top{border-bottom-color:rgba(255,255,255,.18)}
+.mnav-top .logo{color:#fff}
+.mnav-x{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3);color:#fff}
+.mnav-link{color:#fff}
+.mnav-link:hover,.mnav-link:focus-visible,.mnav-item.is-expanded>.mnav-link{background:rgba(255,255,255,.12)}
+.mnav-ic{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25)}
+.mnav-ic svg{stroke:#fff}
+.mnav-item.is-expanded .mnav-ic{background:#fff;border-color:#fff}
+.mnav-item.is-expanded .mnav-ic svg{stroke:var(--blue)}
+.mnav-chev{stroke:rgba(255,255,255,.85)}
+.mnav-sub ul{border-left-color:rgba(255,255,255,.22)}
+.mnav-sub a{color:rgba(255,255,255,.88)}
+.mnav-sub a::before{background:#0E6AD6;border-color:#9FD3FF}
+.mnav-sub a:hover{background:rgba(255,255,255,.12);color:#fff}
+.mnav-foot{background:#fff;color:var(--ink)}
+.mnav-foot .mnav-k{color:var(--blue)}
+.mnav-foot .btn{background:var(--blue);color:#fff}
+.mnav-panel :focus-visible{outline-color:#fff}
