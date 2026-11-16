@@ -818,3 +818,35 @@ input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus
 .hero-gif{margin:0;border-radius:20px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 24px 60px -28px rgba(21,132,247,.35)}
 .hero-gif img{display:block;width:100%;height:auto}
 @media (max-width:860px){.hero-grid{grid-template-columns:1fr}}
+
+/* hero layout: heading → animation → copy (stacked on mobile, two columns on desktop) */
+.hero-head{grid-column:1;grid-row:1;align-self:end}
+.hero-copy{grid-column:1;grid-row:2;align-self:start}
+.hero-gif{grid-column:2;grid-row:1 / span 2;align-self:center}
+.hero-grid{row-gap:0;column-gap:clamp(32px,5vw,72px)}
+.hero-head h1{margin-bottom:22px}
+@media (max-width:860px){
+  .hero-head,.hero-copy,.hero-gif{grid-column:1;grid-row:auto}
+  .hero-head h1{margin-bottom:22px}
+  .hero-gif{margin-bottom:26px}
+  .hero-copy .lede{margin-top:0}
+  .hero-copy .actions{margin-top:24px}
+}
+
+/* smaller headings on phones */
+@media (max-width:640px){
+  .hero h1{font-size:1.9rem}
+  .page-title{font-size:1.7rem}
+  .blog-title,.article-title{font-size:1.75rem}
+  .head h2{font-size:1.55rem}
+  .post-card h2{font-size:1.3rem}
+  .post-card h3,.leader h3,.field h3,.article-cta h3{font-size:1.1rem}
+  .stages h3,.svc h3{font-size:1.1rem}
+  .product h3{font-size:1.25rem}
+  .prod-info h2{font-size:1.2rem}
+  .prose h2{font-size:1.35rem}
+  .prose h3{font-size:1.12rem}
+  .field-pop h3{font-size:1.4rem}
+  .prod-pop h3{font-size:1.35rem}
+  section#contact h2,.contact h2{font-size:1.55rem}
+}
