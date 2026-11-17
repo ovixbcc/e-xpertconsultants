@@ -6,12 +6,18 @@ export default function Hero() {
           <p className="eyebrow">Business &amp; Process Automation</p>
           <h1>Processes that <b>run themselves</b>, so your team can run the business.</h1>
         </div>
-        <figure className="hero-gif">
-          <img
-            src="/images/process-gap.gif"
-            width="1920"
+        <figure className="hero-gif hero-portrait">
+          <video
+            src="/images/process-leaks.mp4"
+            poster="/images/process-leaks-poster.jpg"
+            width="810"
             height="1080"
-            alt="Animation: a supply chain runs smoothly, then two steps, Approval and Quality check, pile up with delays and errors until the gap is identified"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            aria-label="Animation: work flows through a pipeline of checkpoints, but three leaks waste days of time and people's effort until the gaps are found and fixed"
           />
         </figure>
         <div className="hero-copy">
