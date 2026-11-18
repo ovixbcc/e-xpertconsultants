@@ -9,7 +9,7 @@ function topicsOf(category) {
 
 function Card({ p, featured = false }) {
   return (
-    <a className={`post-card${featured ? ' post-featured' : ''}`} href={`/blog/${p.slug}/`}>
+    <a className={`post-card${featured ? ' post-featured' : ''}`} href={p.link || `/blog/${p.slug}/`}>
       {p.cover && <img className="post-thumb" src={p.cover} alt="" loading={featured ? 'eager' : 'lazy'} width={featured ? 216 : 108} height={featured ? 384 : 192} />}
       <div className="post-body">
         <div className="post-meta"><span className="p-tag">{p.category}</span><span>{featured ? `${p.dateLabel} · ` : ''}{p.minutes} min read</span></div>

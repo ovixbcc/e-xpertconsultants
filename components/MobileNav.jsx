@@ -41,7 +41,7 @@ export default function MobileNav() {
     { name: 'Home', icon: 'home', href: '/' },
     { name: 'Who we are', icon: 'about', href: '/#about' },
     { name: 'Services', icon: 'services', group: 'services', items: SERVICES.map((s) => ({ name: s.name, href: `/services/${s.slug}/` })) },
-    { name: 'Products', icon: 'products', group: 'products', items: [{ name: 'All products', href: '/products/' }, ...PRODUCTS.map((p) => ({ name: p.name, href: `/products/${p.slug}/` }))] },
+    { name: 'Products', icon: 'products', group: 'products', items: [{ name: 'All products', href: '/products/' }, ...PRODUCTS.map((p) => ({ name: p.name, href: p.page || `/products/${p.slug}/` }))] },
     { name: 'Team', icon: 'team', href: '/team/' },
     { name: 'Blog', icon: 'blog', href: '/blog/' },
     { name: 'Contact', icon: 'contact', href: '/#contact' },

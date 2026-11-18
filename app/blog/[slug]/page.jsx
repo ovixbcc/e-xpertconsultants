@@ -4,7 +4,7 @@ import Footer from '../../../components/Footer';
 import { getAllPosts, getPost, formatDate } from '../../../lib/posts';
 
 export function generateStaticParams() {
-  return getAllPosts().map((p) => ({ slug: p.slug }));
+  return getAllPosts().filter((p) => !p.link).map((p) => ({ slug: p.slug }));
 }
 
 export function generateMetadata({ params }) {
@@ -20,7 +20,7 @@ export function generateMetadata({ params }) {
 export default function PostPage({ params }) {
   const post = getPost(params.slug);
   if (!post) notFound();
-  const more = getAllPosts().filter((p) => p.slug !== post.slug).slice(0, 2);
+  const more = getAllPosts().filter((p) => p.slug !== post.slug && !p.link).slice(0, 2);
   return (
     <>
       <Header />

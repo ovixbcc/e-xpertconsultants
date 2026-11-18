@@ -20,6 +20,15 @@ const arrow = <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 
 export default function ProductPage({ params }) {
   const p = getProduct(params.slug);
   if (!p) notFound();
+  if (p.page) {
+    return (
+      <main style={{ padding: '120px 24px', textAlign: 'center' }}>
+        <meta httpEquiv="refresh" content={`0;url=${p.page}`} />
+        <script dangerouslySetInnerHTML={{ __html: `location.replace(${JSON.stringify(p.page)})` }} />
+        <p>Opening <a href={p.page}>{p.name}</a>…</p>
+      </main>
+    );
+  }
   const others = PRODUCTS.filter((x) => x.slug !== p.slug);
   return (
     <>
@@ -58,7 +67,7 @@ export default function ProductPage({ params }) {
             <p className="eyebrow">More products</p>
             <div className="prod-grid two" style={{ marginTop: 20 }}>
               {others.map((o) => (
-                <a key={o.slug} className={`prod-card pc-${o.slug}`} href={`/products/${o.slug}/`}>
+                <a key={o.slug} className={`prod-card pc-${o.slug}`} href={o.page || `/products/${o.slug}/`}>
                   <div className="prod-thumb"><span className="prod-chip"><ProductLogo product={o} /></span></div>
                   <div className="prod-info"><span className="p-tag">{o.tag}</span><h2>{o.tagline}</h2><span className="post-more">View {o.name} →</span></div>
                 </a>

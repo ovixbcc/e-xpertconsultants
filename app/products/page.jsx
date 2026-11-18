@@ -24,7 +24,7 @@ export default function ProductsPage() {
           <div className="wrap">
             <div className="prod-grid">
               {PRODUCTS.map((p) => (
-                <a key={p.slug} className={`prod-card pc-${p.slug}`} href={`/products/${p.slug}/`}>
+                <a key={p.slug} className={`prod-card pc-${p.slug}`} href={p.page || `/products/${p.slug}/`}>
                   <div className="prod-thumb">
                     <span className="prod-chip"><ProductLogo product={p} /></span>
                     {p.isNew && <span className="db-new">New</span>}

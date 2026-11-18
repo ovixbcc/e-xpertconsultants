@@ -15,7 +15,7 @@ export default function LatestPosts() {
         </div>
         <div className="post-grid three">
           {posts.map((p) => (
-            <a className="post-card" key={p.slug} href={`/blog/${p.slug}/`}>
+            <a className="post-card" key={p.slug} href={p.link || `/blog/${p.slug}/`}>
               {p.cover && <img className="post-thumb" src={p.cover} alt="" loading="lazy" width="108" height="192" />}
               <div className="post-body">
               <div className="post-meta"><span className="p-tag">{p.category}</span><span>{p.minutes} min read</span></div>
